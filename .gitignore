@@ -1,2 +1,4 @@
 /target
 /test-ledger
+docker/clickhouse_data
+docker/kafka_data

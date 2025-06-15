@@ -6,14 +6,14 @@ services:
     ports:
       - '8123:8123'
     volumes:
-      - clickhouse_data:/bitnami/clickhouse
+      - ./clickhouse_data:/bitnami/clickhouse
 
   kafka:
     image: apache/kafka:3.7.1
     ports:
       - "9092:9092"
     volumes:
-      - kafka_data:/opt/kafka/logs
+      - ./kafka_data:/opt/kafka/logs
 
 volumes:
   clickhouse_data:
