@@ -2,3 +2,5 @@
 /test-ledger
 docker/clickhouse_data
 docker/kafka_data
+node_modules
+backend/dist
