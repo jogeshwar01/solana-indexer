@@ -1,3 +1,6 @@
 [submodule "yellowstone-grpc"]
 	path = yellowstone-grpc
 	url = https://github.com/jogeshwar01/yellowstone-grpc.git
+[submodule "yellowstone-grpc-kafka"]
+	path = yellowstone-grpc-kafka
+	url = https://github.com/jogeshwar01/yellowstone-grpc-kafka.git

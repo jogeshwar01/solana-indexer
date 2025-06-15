@@ -1,5 +1,7 @@
 git switch 1.18 // to support solana-test-validator else need to use agave
+
 sudo apt update
+
 sudo apt install libsasl2-dev
 
 remove this from config.json
