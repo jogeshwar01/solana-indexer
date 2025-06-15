@@ -2,25 +2,10 @@
 
 A real-time Solana blockchain data indexer that streams transactions and account changes using Yellowstone gRPC Geyser plugin, processes them through Kafka, and stores structured data in ClickHouse for analytics and querying.
 
-## Architecture Overview
+## Architecture
 
-```
-┌─────────────────┐    ┌──────────────┐    ┌─────────────┐    ┌──────────────┐
-│   Solana Node   │    │  Yellowstone │    │   Kafka     │    │   Express    │
-│   + Geyser      │───▶│     gRPC     │───▶│   Topic:    │───▶│   Consumer   │
-│    Plugin       │    │   Streamer   │    │   "grpc1"   │    │ (TypeScript) │
-└─────────────────┘    └──────────────┘    └─────────────┘    └──────────────┘
-                                                                       │
-                                                                       ▼
-┌─────────────────┐    ┌──────────────┐    ┌─────────────┐    ┌──────────────┐
-│   ClickHouse    │◀───│   Protobuf   │◀───│  Message    │◀───│    File      │
-│   Database      │    │   Decoder    │    │ Processor   │    │   Storage    │
-│                 │    │              │    │             │    │              │
-│ • Raw Messages  │    │ • Confirmed  │    │ • Extract   │    │ • Debug Logs │
-│ • Decoded Data  │    │   Blocks     │    │   Txns      │    │ • Raw Data   │
-│ • Transactions  │    │ • Txn Data   │    │ • Transform │    │              │
-└─────────────────┘    └──────────────┘    └─────────────┘    └──────────────┘
-```
+![Architecture Diagram](architecture.png)
+
 
 ## Features
 
